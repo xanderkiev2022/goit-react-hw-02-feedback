@@ -1,7 +1,7 @@
 // import Profile from './components/Profile/Profile';
 
 import React, { Component } from 'react';
-import Statistics from './Statistics/Statistics';
+// import Statistics from './Statistics/Statistics';
 import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import Notification from './Notification/Notification';
 import Section from './Section/Section';
@@ -13,7 +13,7 @@ export default class App extends Component {
     bad: 0,
   };
 
-  static propTypes = {};
+  // static propTypes = {};
 
   // countTotalFeedback();
   // countPositiveFeedbackPercentage();
@@ -24,21 +24,23 @@ export default class App extends Component {
   };
 
   render() {
-    const { good, neutral, bad } = this.state;
+    const buttons = Object.keys(this.state);
+
     return (
       <div>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={this.state}
+            options={buttons}
             onLeaveFeedback={this.handleIncrement}
           />
         </Section>
-        {/* <Statistics
-          options={this.state}
-          total={total}
-          positivePercentage={positivePercentage}
-        /> */}
-
+        <Section>
+          {/* <Statistics
+            options={this.state}
+            total={total}
+            positivePercentage={positivePercentage}
+          /> */}
+        </Section>
         <Notification message="There is no feedback" />
       </div>
     );
