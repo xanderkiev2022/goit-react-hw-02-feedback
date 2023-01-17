@@ -1,5 +1,3 @@
-// import Profile from './components/Profile/Profile';
-
 import React, { Component } from 'react';
 import Statistics from './Statistics/Statistics';
 import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
@@ -27,14 +25,15 @@ export default class App extends Component {
     return `${result} `;
   };
 
-  handleIncrement = option => {
+  handleIncrement = event => {
     this.setState(prevState => ({
-      [option]: prevState[option] + 1,
+      [event.target.name]: prevState[event.target.name] + 1,
     }));
   };
 
   render() {
     const buttons = Object.keys(this.state);
+    const countTotal = this.countTotalFeedback();
 
     return (
       <div>
@@ -45,15 +44,18 @@ export default class App extends Component {
           />
         </Section>
         <Section>
-          <Statistics
-            good={this.state.good}
-            neutral={this.state.neutral}
-            bad={this.state.bad}
-            total={this.countTotalFeedback()}
-            positivePercentage={this.countPositiveFeedbackPercentage()}
-          />
+          {countTotal > 0 ? (
+            <Statistics
+              good={this.state.good}
+              neutral={this.state.neutral}
+              bad={this.state.bad}
+              total={this.countTotalFeedback()}
+              positivePercentage={this.countPositiveFeedbackPercentage()}
+            />
+          ) : (
+            <Notification message="There is no feedback" />
+          )}
         </Section>
-        <Notification message="There is no feedback" />
       </div>
     );
   }
