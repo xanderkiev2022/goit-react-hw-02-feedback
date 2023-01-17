@@ -17,10 +17,9 @@ export default class App extends Component {
   };
 
   countPositiveFeedbackPercentage = () => {
-    const countTotal = this.countTotalFeedback();
     let result = 0;
-    if (countTotal > 0) {
-      result = Math.round((this.state.good / countTotal) * 100);
+    if (this.countTotalFeedback() > 0) {
+      result = Math.round((this.state.good / this.countTotalFeedback()) * 100);
     }
     return `${result} `;
   };
@@ -32,14 +31,13 @@ export default class App extends Component {
   };
 
   render() {
-    const buttons = Object.keys(this.state);
     const countTotal = this.countTotalFeedback();
 
     return (
       <div>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={buttons}
+            options={Object.keys(this.state)}
             onLeaveFeedback={this.handleIncrement}
           />
         </Section>
