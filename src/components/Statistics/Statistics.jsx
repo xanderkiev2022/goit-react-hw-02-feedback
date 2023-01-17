@@ -1,11 +1,16 @@
-const Statistics = ({ good, neutral, bad, total, positivePercentage }) => ();
+import PropTypes from 'prop-types';
 
-Statistics.propTypes = {
-//   _____: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       id: PropTypes.string.isRequired,
-//     }).isRequired,
-//   ).isRequired,
+const Statistics = ({ options, total, positivePercentage }) => {
+  return;
 };
 
-export default TodoList;
+Statistics.propTypes = {
+  //   _____: PropTypes.arrayOf(
+  //     PropTypes.shape({
+  //       id: PropTypes.string.isRequired,
+  //     }).isRequired,
+  //   ).isRequired,
+};
+// () => onLeaveFeedback(label);
+
+export default Statistics;
