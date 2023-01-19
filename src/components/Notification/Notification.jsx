@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import {TitleH3} from './Notification.styled';
+import { TitleH3 } from './Notification.styled';
 
 const Notification = ({ message }) => {
   return (

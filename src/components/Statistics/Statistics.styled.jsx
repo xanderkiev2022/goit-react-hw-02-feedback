@@ -18,6 +18,6 @@ export const ItemTotalResultText = styled.span`
 `;
 
 export const Container = styled.div`
-display: flex;
-justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 `;
