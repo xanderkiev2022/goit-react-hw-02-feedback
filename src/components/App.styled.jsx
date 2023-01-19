@@ -7,19 +7,3 @@ export const Container = styled.div`
   background-color: var(--primary-background-color);
   box-shadow: var(--box-shadow);
 `;
-
-// export const TitleH1 = styled.h1`
-//   text-align: center;
-//   margin-bottom: 10px;
-// `;
-
-
-// export const ItemContainer = styled.div`
-// display: flex;
-// justify-content: space-between;
-// `;
-
-// export const ItemText = styled.span`
-// color: #777777;
-// `;
-

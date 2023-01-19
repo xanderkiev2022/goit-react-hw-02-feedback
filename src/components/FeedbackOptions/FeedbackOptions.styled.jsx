@@ -6,7 +6,6 @@ justify-content: space-around;
 `;
 
 export const Button = styled.button`
-margin-left: 10px;
 padding: 5px 15px;
   background-color: var(--accent-color);
   color: var(--primary-text-color);

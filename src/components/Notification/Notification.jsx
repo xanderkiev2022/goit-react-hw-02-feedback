@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import {TitleH3} from './Notification.styled';
 
 const Notification = ({ message }) => {
   return (
     <div>
-      <h3>{message}</h3>
+      <TitleH3>{message}</TitleH3>
     </div>
   );
 };
